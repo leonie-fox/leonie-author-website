@@ -1,0 +1,26 @@
+# macOS
+.DS_Store
+
+# Node / frontend (just in case later)
+node_modules/
+npm-debug.log*
+yarn-error.log
+
+# Ruby / Bundler
+.bundle/
+vendor/bundle/
+
+# Jekyll build artifacts
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Logs / temp
+*.log
+*.tmp
+tmp/
+
+# Editor settings
+.vscode/
+.idea/
