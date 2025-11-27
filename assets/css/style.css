@@ -79,6 +79,11 @@ header {
   color: var(--color-gold) !important;
 }
 
+/* Space between nav buttons */
+.nav.nav-pills {
+  gap: 0.4rem;
+}
+
 /* =========================================
    Headings
 ========================================= */
