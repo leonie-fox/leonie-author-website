@@ -1,0 +1,173 @@
+/* =========================================
+   Custom Theme – "Orient Express Author"
+========================================= */
+
+:root {
+  --color-bg: #0E1F33;        /* deep navy */
+  --color-text: #F4F4F4;
+
+  /* New gold tones */
+  --color-gold: #B69555;          /* main gold */
+  --color-gold-light: #D4BC7A;    /* softer, for hover states */
+
+  --color-card: rgba(255, 255, 255, 0.06);
+  --color-border: rgba(255, 255, 255, 0.15);
+
+  --radius-lg: 14px;
+  --radius-xl: 24px;
+}
+
+
+/* Global reset */
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: "Georgia", "Times New Roman", serif;
+  line-height: 1.7;
+}
+
+/* Header */
+header {
+  background: rgba(0,0,0,0.3);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.nav-link {
+  color: var(--color-text) !important;
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-lg);
+  transition: 0.2s ease;
+}
+
+.nav-link:hover {
+  background: rgba(255,255,255,0.08);
+  color: var(--color-gold) !important;
+}
+
+.nav-link.active {
+  background: rgba(255,255,255,0.12);
+  color: var(--color-gold) !important;
+}
+
+/* Cards / blocks */
+.card-dark {
+  background: var(--color-card);
+  backdrop-filter: blur(4px);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+}
+
+/* Buttons */
+.btn-gold {
+  background: var(--color-gold);
+  color: #0E1F33;
+  border: none;
+  padding: 0.7rem 1.4rem;
+  font-weight: bold;
+  border-radius: var(--radius-lg);
+  transition: 0.25s ease;
+}
+
+.btn-gold:hover {
+  background: var(--color-gold-light);
+  transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+  border-top: 1px solid var(--color-border);
+  background: rgba(0,0,0,0.25);
+  color: var(--color-text);
+}
+
+/* Headings with gold underline */
+h1, h2, h3 {
+  position: relative;
+  padding-bottom: 0.4rem;
+}
+
+h1::after,
+h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 3px;
+  background: var(--color-gold);
+  border-radius: 999px;
+}
+
+/* Override Bootstrap active nav pill color */
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background-color: rgba(255, 255, 255, 0.12) !important;
+  color: var(--color-gold) !important;
+}
+
+/* Author site: main content spacing under header */
+body > .container:first-of-type,
+body > main > .container:first-of-type {
+  margin-top: 1.5rem;
+}
+
+/* Global link styling */
+a {
+  color: var(--color-gold);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: var(--color-gold-light);
+  text-decoration: none;
+}
+
+/* Gold-accent card (for radio interview) */
+.card-gold {
+  color: var(--color-gold);
+}
+
+.card-gold p {
+  color: var(--color-gold);
+}
+
+/* Try to color the audio controls where supported */
+.card-gold audio {
+  accent-color: var(--color-gold);
+}
+
+.card-gold audio::-webkit-media-controls-enclosure {
+  background-color: var(--color-gold);
+}
+
+.btn-gold {
+  background: var(--color-gold);
+  color: #0E1F33 !important;
+  border: none;
+  padding: 0.7rem 1.4rem;
+  font-weight: bold;
+  border-radius: var(--radius-lg);
+  transition: 0.25s ease;
+}
+
+.btn-gold:hover,
+.btn-gold:focus {
+  background: var(--color-gold-light);
+  color: #0E1F33 !important;  /* keep text dark on hover */
+}
+
+/* Main book cover on "Romane" page */
+.book-cover-main {
+  max-width: 80%;   /* ~20% smaller than full width */
+  height: auto;
+}
+
+/* Optional: let it be full width on small screens */
+@media (max-width: 768px) {
+  .book-cover-main {
+    max-width: 100%;
+  }
+}
