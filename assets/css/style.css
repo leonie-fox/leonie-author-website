@@ -21,6 +21,12 @@
    Base / Global
 ========================================= */
 
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   background: var(--color-bg);
   color: var(--color-text);
@@ -200,4 +206,11 @@ footer {
   .book-cover-col {
     padding-top: 5.4rem;  /* tweak to match card height visually */
   }
+}
+
+.logo-img {
+  height: 70px;
+  width: auto;
+  max-width: 100%;
+  display: block;
 }
