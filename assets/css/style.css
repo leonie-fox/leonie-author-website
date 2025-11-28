@@ -3,19 +3,20 @@
 ========================================= */
 
 :root {
-  --color-bg: #0E1F33;           /* deep navy */
-  --color-text: #F4F4F4;
+    --color-bg: #0E1F33;           /* deep navy */
+    --color-text: #F4F4F4;
 
-  /* Gold tones */
-  --color-gold: #B69555;         /* main gold */
-  --color-gold-light: #D4BC7A;   /* hover/soft gold */
+    /* Gold tones */
+    --color-gold: #B69555;         /* main gold */
+    --color-gold-light: #D4BC7A;   /* hover/soft gold */
 
-  --color-card: rgba(255, 255, 255, 0.06);
-  --color-border: rgba(255, 255, 255, 0.15);
+    --color-card: rgba(255, 255, 255, 0.06);
+    --color-border: rgba(255, 255, 255, 0.15);
 
-  --radius-lg: 14px;
-  --radius-xl: 24px;
+    --radius-lg: 14px;
+    --radius-xl: 24px;
 }
+
 
 /* =========================================
    Base / Global
@@ -23,72 +24,74 @@
 
 html,
 body {
-  max-width: 100%;
-  overflow-x: hidden;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 body {
-  background: var(--color-bg);
-  color: var(--color-text);
-  font-family: "Georgia", "Times New Roman", serif;
-  line-height: 1.7;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: "Georgia", "Times New Roman", serif;
+    line-height: 1.7;
 }
 
 /* Global link styling */
 a {
-  color: var(--color-gold);
-  text-decoration: none;
+    color: var(--color-gold);
+    text-decoration: none;
 }
 
 a:hover,
 a:focus {
-  color: var(--color-gold-light);
-  text-decoration: none;
+    color: var(--color-gold-light);
+    text-decoration: none;
 }
 
 /* First container spacing under header (fallback helper) */
 body > .container:first-of-type,
 body > main > .container:first-of-type {
-  margin-top: 1.5rem;
+    margin-top: 1.5rem;
 }
+
 
 /* =========================================
    Header & Navigation
 ========================================= */
 
 header {
-  background: rgba(0, 0, 0, 0.3);
-  border-bottom: 1px solid var(--color-border);
+    background: rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid var(--color-border);
 }
 
 .nav-link {
-  color: var(--color-text) !important;
-  padding: 0.4rem 0.8rem;
-  border-radius: var(--radius-lg);
-  transition: 0.2s ease;
+    color: var(--color-text) !important;
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--radius-lg);
+    transition: 0.2s ease;
 }
 
 .nav-link:hover {
-  background: rgba(255, 255, 255, 0.08);
-  color: var(--color-gold) !important;
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--color-gold) !important;
 }
 
 .nav-link.active {
-  background: rgba(255, 255, 255, 0.12);
-  color: var(--color-gold) !important;
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--color-gold) !important;
 }
 
 /* Override Bootstrap active nav pill color */
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
-  background-color: rgba(255, 255, 255, 0.12) !important;
-  color: var(--color-gold) !important;
+    background-color: rgba(255, 255, 255, 0.12) !important;
+    color: var(--color-gold) !important;
 }
 
 /* Space between nav buttons */
 .nav.nav-pills {
-  gap: 0.4rem;
+    gap: 0.4rem;
 }
+
 
 /* =========================================
    Headings
@@ -97,120 +100,143 @@ header {
 h1,
 h2,
 h3 {
-  position: relative;
-  padding-bottom: 0.4rem;
+    position: relative;
+    padding-bottom: 0.4rem;
 }
 
 h1::after,
 h2::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 50px;
-  height: 3px;
-  background: var(--color-gold);
-  border-radius: 999px;
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--color-gold);
+    border-radius: 999px;
 }
 
 /* Home welcome title */
 .welcome-title {
-  font-size: 1.5rem;
+    font-size: 1.5rem;
 }
 
 @media (max-width: 576px) {
-  .welcome-title {
-    font-size: 1.3rem;
-  }
+    .welcome-title {
+        font-size: 1.3rem;
+    }
 }
+
 
 /* =========================================
    Cards / Blocks
 ========================================= */
 
 .card-dark {
-  background: var(--color-card);
-  backdrop-filter: blur(4px);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
-  padding: 1.5rem;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+    background: var(--color-card);
+    backdrop-filter: blur(4px);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: 1.5rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
 }
 
 /* Gold-accent card (radio interview) */
 .card-gold {
-  color: var(--color-gold);
+    color: var(--color-gold);
 }
 
 .card-gold p {
-  color: var(--color-gold);
+    color: var(--color-gold);
 }
 
 /* Audio styling inside gold card (where supported) */
 .card-gold audio {
-  accent-color: var(--color-gold);
+    accent-color: var(--color-gold);
 }
 
 .card-gold audio::-webkit-media-controls-enclosure {
-  background-color: var(--color-gold);
+    background-color: var(--color-gold);
 }
+
 
 /* =========================================
    Buttons
 ========================================= */
 
 .btn-gold {
-  background: var(--color-gold);
-  color: #0E1F33 !important;
-  border: none;
-  padding: 0.7rem 1.4rem;
-  font-weight: bold;
-  border-radius: var(--radius-lg);
-  transition: 0.25s ease;
+    background: var(--color-gold);
+    color: #0E1F33 !important;
+    border: none;
+    padding: 0.7rem 1.4rem;
+    font-weight: bold;
+    border-radius: var(--radius-lg);
+    transition: 0.25s ease;
 }
 
 .btn-gold:hover,
 .btn-gold:focus {
-  background: var(--color-gold-light);
-  color: #0E1F33 !important; /* keep text dark on hover */
+    background: var(--color-gold-light);
+    color: #0E1F33 !important; /* keep text dark on hover */
 }
+
 
 /* =========================================
    Footer
 ========================================= */
 
 footer {
-  border-top: 1px solid var(--color-border);
-  background: rgba(0, 0, 0, 0.25);
-  color: var(--color-text);
+    border-top: 1px solid var(--color-border);
+    background: rgba(0, 0, 0, 0.25);
+    color: var(--color-text);
 }
+
 
 /* =========================================
    Book Cover (Romane page)
 ========================================= */
 
 .book-cover-main {
-  max-width: 80%;   /* about 20% smaller than full width on desktop */
-  height: auto;
-  max-height: 100%;
+    max-width: 80%;   /* about 20% smaller than full width on desktop */
+    height: auto;
+    max-height: 100%;
 }
 
 @media (max-width: 768px) {
-  .book-cover-main {
-    max-width: 100%;
-  }
+    .book-cover-main {
+        max-width: 100%;
+    }
 }
 
-/* Fine-tune vertical position of book cover on Romane page (desktop only) */
+/* Fine-tune vertical position of book cover and letter (desktop only) */
 @media (min-width: 992px) {
-  .book-cover-col {
-    padding-top: 5.4rem;  /* tweak to match card height visually */
-  }
+    .book-cover-col {
+        padding-top: 6rem;  /* tweak to match card height visually */
+    }
+
+    .letter-image {
+        padding-top: 4.4rem;
+    }
 }
+
+
+/* =========================================
+   Logo & Decorative Letter
+========================================= */
 
 .logo-img {
-  height: 70px;
-  width: auto;
-  max-width: 100%;
-  display: block;
+    height: 70px;
+    width: auto;
+    max-width: 100%;
+    display: block;
+}
+
+.letter-image {
+    max-width: 300px;
+    opacity: 0.95;
+    transition: transform 0.25s ease-out;
+}
+
+.letter-image:hover {
+    transform: rotate(2deg);
 }
