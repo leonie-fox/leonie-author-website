@@ -39,6 +39,8 @@ body {
 a {
     color: var(--color-gold);
     text-decoration: none;
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 a:hover,
