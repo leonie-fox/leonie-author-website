@@ -242,3 +242,41 @@ footer {
 .letter-image:hover {
     transform: rotate(2deg);
 }
+
+/* =========================================
+   Instagram Icons
+========================================= */
+
+.instagram-large {
+    max-width: 60px;
+    height: auto;
+    opacity: 0.95;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.instagram-large:hover {
+    transform: translateY(-2px) scale(1.03);
+    opacity: 1;
+}
+
+.footer-links a {
+    display: inline-flex;
+    align-items: center;
+}
+
+.footer-instagram {
+    height: 42px;
+    width: auto;
+    display: block;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    opacity: 0.95;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.footer-links a:hover .footer-instagram,
+.footer-links a:focus .footer-instagram {
+    transform: translateY(-1px) scale(1.05);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+    opacity: 1;
+}
