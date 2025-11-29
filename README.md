@@ -27,11 +27,10 @@ Live site: **https://autorin.leonie-wittkamp.de**
 │   ├── img
 │   │   ├── logo.png
 │   │   ├── leonie.jpg
-│   │   ├── leonie2.jpeg
+│   │   ├── leonie2.png
 │   │   ├── book-cover.jpg
-│   │   ├── letter.jpg
-│   │   ├── instagram.png           # Large Instagram icon (Kontakt page)
-│   │   └── instagram-footer.png    # Smaller Instagram icon (footer)
+│   │   ├── letter.png
+│   │   ├── instagram.png           # Instagram icon (Kontakt page and footer)
 │   └── audio
 │       └── interview.mp3    # Radio interview audio
 ├── index.html               # Home
