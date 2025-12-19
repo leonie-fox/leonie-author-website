@@ -168,6 +168,10 @@ h2::after {
     background-color: var(--color-gold);
 }
 
+.audio-byline {
+    font-size: 0.9rem;
+}
+
 
 /* =========================================
    Buttons
