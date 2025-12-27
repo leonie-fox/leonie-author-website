@@ -17,6 +17,20 @@
     --radius-xl: 24px;
 }
 
+@view-transition {
+    navigation: auto;
+}
+
+::view-transition-group(site-logo) {
+    animation-duration: 180ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+        animation: none;
+    }
+}
 
 /* =========================================
    Base / Global
@@ -242,6 +256,7 @@ footer {
     width: auto;
     max-width: 100%;
     display: block;
+    view-transition-name: site-logo;
 }
 
 .letter-image {

@@ -1,4 +1,8 @@
 (function () {
+  if (window.HTMLScriptElement && HTMLScriptElement.supports && HTMLScriptElement.supports("speculationrules")) {
+    return;
+  }
+
   var seen = new Set();
 
   function shouldSkip(anchor) {
@@ -40,10 +44,12 @@
     prefetch(anchor);
   }
 
-  var nav = document.querySelector("nav");
-  if (!nav) return;
+  var containers = document.querySelectorAll("nav, .footer-links");
+  if (!containers.length) return;
 
-  nav.addEventListener("mouseenter", handler, true);
-  nav.addEventListener("focusin", handler, true);
-  nav.addEventListener("touchstart", handler, { passive: true });
+  containers.forEach(function (container) {
+    container.addEventListener("mouseenter", handler, true);
+    container.addEventListener("focusin", handler, true);
+    container.addEventListener("touchstart", handler, { passive: true });
+  });
 })();
