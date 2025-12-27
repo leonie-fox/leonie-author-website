@@ -10,9 +10,9 @@ Live site: **https://autorin.leonie-wittkamp.de**
 
 ## Tech Stack
 
-- **Static HTML & CSS**  
+- **Jekyll** (GitHub Pages) with Liquid layouts  
+- **Static HTML, CSS, and JS** output  
 - **Bootstrap 5** (via CDN)  
-- No build step, no Jekyll, no framework  
 - Hosted on **GitHub Pages** with a custom domain
 
 ---
@@ -24,6 +24,8 @@ Live site: **https://autorin.leonie-wittkamp.de**
 ├── assets
 │   ├── css
 │   │   └── style.css        # Custom theme ("Orient Express Author")
+│   ├── js
+│   │   └── nav-prefetch.js  # Prefetch fallback for nav links
 │   ├── img
 │   │   ├── logo.png
 │   │   ├── leonie.jpg
@@ -33,13 +35,15 @@ Live site: **https://autorin.leonie-wittkamp.de**
 │   │   ├── instagram.png           # Instagram icon (Kontakt page and footer)
 │   └── audio
 │       └── interview.mp3    # Radio interview audio
-├── index.html               # Home
-├── about.html               # About the author
-├── romane.html              # Novel overview/details
-├── termine.html             # Events / readings
-├── kontakt.html             # Contact form (Formspree)
-├── impressum.html           # Legal imprint
-├── datenschutz.html         # Privacy policy
+├── _layouts
+│   └── default.html         # Shared layout (head, nav, footer)
+├── index.html               # Home (permalink: /)
+├── about.html               # About the author (permalink: /ueber-mich)
+├── romane.html              # Novel overview/details (permalink: /romane)
+├── termine.html             # Events / readings (permalink: /termine)
+├── kontakt.html             # Contact form (permalink: /kontakt)
+├── impressum.html           # Legal imprint (permalink: /impressum)
+├── datenschutz.html         # Privacy policy (permalink: /datenschutz)
 ├── CNAME                    # Custom domain: autorin.leonie-wittkamp.de
 ├── favicon-32x32.png
 ├── favicon-16x16.png
@@ -51,9 +55,7 @@ Live site: **https://autorin.leonie-wittkamp.de**
 
 ## Local Development
 
-This is a pure static site. No build tools are required.
-
-### Option A – Open directly in the browser
+This site uses Jekyll for layouts and permalinks, so serve it locally instead of opening files directly.
 
 1. Clone the repository:
 
@@ -62,24 +64,18 @@ This is a pure static site. No build tools are required.
    cd leonie-author-website
    ```
 
-2. Open `index.html` directly in your browser.
+2. Install dependencies and run Jekyll:
 
-> Note: Some browsers handle relative paths more reliably when served via a local web server (Option B).
+   ```bash
+   bundle install
+   bundle exec jekyll serve
+   ```
 
-### Option B – Run a tiny local web server (recommended)
+3. Open:
 
-Using Python 3:
-
-```bash
-cd leonie-author-website
-python -m http.server 8000
-```
-
-Then open:
-
-```text
-http://localhost:8000
-```
+   ```text
+   http://localhost:4000
+   ```
 
 ---
 
@@ -148,13 +144,14 @@ The contact form on `kontakt.html` uses **Formspree**:
 ## Favicons
 
 Favicons are generated and stored in the project root.  
-They are wired in each page’s `<head>`:
+They are wired in the shared layout `<head>`:
 
 ```html
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="manifest" href="site.webmanifest">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ '/apple-touch-icon.png' | relative_url }}">
+<link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ '/favicon-32x32.png' | relative_url }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ '/favicon-16x16.png' | relative_url }}">
+<link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}">
 ```
 
 ---
